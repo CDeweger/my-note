@@ -1,9 +1,12 @@
 import React from "react";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
+import Container from "@mui/material/Container";
+import AcUnitIcon from "@mui/icons-material/AcUnit";
+
 const Create = () => {
   return (
-    <div>
+    <Container>
       <Typography
         varient="h6"
         component="h2"
@@ -21,7 +24,8 @@ const Create = () => {
       >
         Submit
       </Button>
-    </div>
+      <AcUnitIcon color="secondary" />
+    </Container>
   );
 };
 
