@@ -2,9 +2,19 @@ import React from "react";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
-import AcUnitIcon from "@mui/icons-material/AcUnit";
+import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
+import "./Create.scss";
+import { makeStyles } from "@mui/styles";
+
+const useStyles = makeStyles({
+  btn: {
+    fontSize: 60,
+    backgroundColor: "violet",
+  },
+});
 
 const Create = () => {
+  const classes = useStyles();
   return (
     <Container>
       <Typography
@@ -17,14 +27,15 @@ const Create = () => {
       </Typography>
 
       <Button
+        className={classes.btn}
         type="submit"
         variant="contained"
         color="secondary"
         onClick={() => console.log("clicked")}
+        endIcon={<KeyboardArrowRightIcon />}
       >
         Submit
       </Button>
-      <AcUnitIcon color="secondary" />
     </Container>
   );
 };
