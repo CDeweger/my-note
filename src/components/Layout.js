@@ -13,7 +13,9 @@ import {
   useHistory,
   useLocation,
 } from "react-router-dom/cjs/react-router-dom.min";
-import { purple } from "@mui/material/colors";
+import { AppBar } from "@mui/material";
+import { Toolbar } from "@mui/material";
+import { format } from "date-fns";
 
 const drawerWidth = 240;
 
@@ -39,6 +41,14 @@ const useStyles = makeStyles((theme) => {
     title: {
       padding: theme.spacing(3),
     },
+    appBar: {
+      width: `calc(100% - ${drawerWidth}px)`,
+      marginLeft: drawerWidth,
+    },
+    date: {
+      flexGrow: 1,
+    },
+    toolbar: theme.mixins.toolbar,
   };
 });
 
@@ -61,6 +71,14 @@ const Layout = ({ children }) => {
 
   return (
     <div className={classes.root}>
+      <AppBar className={classes.appBar} elevation={0}>
+        <Toolbar className={classes.appBar}>
+          <Typography className={classes.date}>
+            Today is {format(new Date(), "eeee do MMMM y ")}{" "}
+          </Typography>
+          <Typography>Carol</Typography>
+        </Toolbar>
+      </AppBar>
       <Drawer
         variant="permanent"
         anchor="left"
@@ -87,7 +105,10 @@ const Layout = ({ children }) => {
           ))}
         </List>
       </Drawer>
-      <div className={classes.page}>{children}</div>
+      <div className={classes.page}>
+        <div className={classes.toolbar}></div>
+        {children}
+      </div>
     </div>
   );
 };
