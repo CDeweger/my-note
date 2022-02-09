@@ -1,22 +1,16 @@
 {
-    "notes": [
-        {
-            "title": "Make dinner",
-            "details": "Quis esse incididunt laboris Lorem aliqua velit Lorem. Irure mollit cillum non non minim pariatur dolor occaecat ea. Excepteur anim velit qui veniam voluptate qui mollit adipisicing veniam tempor aliquip labore mollit ex. Elit cillum eu nulla occaecat officia magna aliquip do do sunt dolor. Nostrud ea veniam dolor tempor tempor occaecat dolor laborum tempor pariatur anim.",
-            "category": "reminders",
-            "id": 1
-        },
-        {
-            "title": "Finish work",
-            "details": "Quis esse incididunt laboris Lorem aliqua velit Lorem. Irure mollit cillum non non minim pariatur dolor occaecat ea. Excepteur anim velit qui veniam voluptate qui mollit adipisicing veniam tempor aliquip labore mollit ex. Elit cillum eu nulla occaecat officia magna aliquip do do sunt dolor. Nostrud ea veniam dolor tempor tempor occaecat dolor laborum tempor pariatur anim.",
-            "category": "work",
-            "id": 2
-        },
-        {
-            "title": "Buy Grocery",
-            "details": "Quis esse incididunt laboris Lorem aliqua velit Lorem. Irure mollit cillum non non minim pariatur dolor occaecat ea. Excepteur anim velit qui veniam voluptate qui mollit adipisicing veniam tempor aliquip labore mollit ex. Elit cillum eu nulla occaecat officia magna aliquip do do sunt dolor. Nostrud ea veniam dolor tempor tempor occaecat dolor laborum tempor pariatur anim.",
-            "category": "todos",
-            "id": 3
-        }
-    ]
+  "notes": [
+    {
+      "title": "Make dinner",
+      "details": "Quis esse incididunt laboris Lorem aliqua velit Lorem. Irure mollit cillum non non minim pariatur dolor occaecat ea. Excepteur anim velit qui veniam voluptate qui mollit adipisicing veniam tempor aliquip labore mollit ex. Elit cillum eu nulla occaecat officia magna aliquip do do sunt dolor. Nostrud ea veniam dolor tempor tempor occaecat dolor laborum tempor pariatur anim.",
+      "category": "reminders",
+      "id": 1
+    },
+    {
+      "title": "Buy Grocery",
+      "details": "Quis esse incididunt laboris Lorem aliqua velit Lorem. Irure mollit cillum non non minim pariatur dolor occaecat ea. Excepteur anim velit qui veniam voluptate qui mollit adipisicing veniam tempor aliquip labore mollit ex. Elit cillum eu nulla occaecat officia magna aliquip do do sunt dolor. Nostrud ea veniam dolor tempor tempor occaecat dolor laborum tempor pariatur anim.",
+      "category": "todos",
+      "id": 3
+    }
+  ]
 }
