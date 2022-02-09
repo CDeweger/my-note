@@ -4,6 +4,7 @@ import { createTheme, ThemeProvider } from "@mui/material";
 import Notes from "./pages/Notes";
 import Create from "./pages/Create/Create";
 import { purple } from "@mui/material/colors";
+import Layout from "./components/Layout";
 
 const theme = createTheme({
   palette: {
@@ -26,14 +27,16 @@ function App() {
     <ThemeProvider theme={theme}>
       <div className="App">
         <BrowserRouter>
-          <Switch>
-            <Route exact path="/">
-              <Notes />
-            </Route>
-            <Route path="/create">
-              <Create />
-            </Route>
-          </Switch>
+          <Layout>
+            <Switch>
+              <Route exact path="/">
+                <Notes />
+              </Route>
+              <Route path="/create">
+                <Create />
+              </Route>
+            </Switch>
+          </Layout>
         </BrowserRouter>
       </div>
     </ThemeProvider>
