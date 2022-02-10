@@ -3,24 +3,32 @@ import { CardHeader, IconButton, Typography } from "@mui/material";
 import { CardContent } from "@mui/material";
 import { Card } from "@mui/material";
 import { DeleteOutlined } from "@mui/icons-material";
-import { makeStyles } from "@mui/styles";
+import Avatar from "@mui/material/Avatar";
+import { green, pink, blue, yellow } from "@mui/material/colors";
 
-const useStyles = makeStyles({
-  test: {
-    border: (note) => {
-      if (note.category == "work") {
-        return "1px solid red";
-      }
-    },
-  },
-});
-
+const avatarBgColor = (note) => {
+  if (note.category === "work") {
+    return yellow[700];
+  }
+  if (note.category === "bills") {
+    return green[700];
+  }
+  if (note.category === "todos") {
+    return pink[500];
+  } else {
+    return blue[500];
+  }
+};
 const NoteCard = ({ note, handleDelete }) => {
-  const classes = useStyles(note);
   return (
     <div>
-      <Card elevation={1} className={classes.test}>
+      <Card elevation={1}>
         <CardHeader
+          avatar={
+            <Avatar sx={{ bgcolor: avatarBgColor(note) }}>
+              {note.category[0].toUpperCase()}
+            </Avatar>
+          }
           action={
             <IconButton onClick={() => handleDelete(note.id)}>
               <DeleteOutlined />

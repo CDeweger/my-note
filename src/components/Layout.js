@@ -16,6 +16,8 @@ import {
 import { AppBar } from "@mui/material";
 import { Toolbar } from "@mui/material";
 import { format } from "date-fns";
+import Avatar from "@mui/material/Avatar";
+import otterImg from "../image/otter.jpg";
 
 const drawerWidth = 240;
 
@@ -48,6 +50,9 @@ const useStyles = makeStyles((theme) => {
     date: {
       flexGrow: 1,
     },
+    avatar: {
+      marginLeft: theme.spacing(2),
+    },
     toolbar: theme.mixins.toolbar,
   };
 });
@@ -77,6 +82,7 @@ const Layout = ({ children }) => {
             Today is {format(new Date(), "eeee do MMMM y ")}{" "}
           </Typography>
           <Typography>Carol</Typography>
+          <Avatar src={otterImg} className={classes.avatar} />
         </Toolbar>
       </AppBar>
       <Drawer
@@ -97,7 +103,9 @@ const Layout = ({ children }) => {
               button
               key={item.text}
               onClick={() => history.push(item.path)}
-              className={location.pathname == item.path ? classes.active : null}
+              className={
+                location.pathname === item.path ? classes.active : null
+              }
             >
               <ListItemIcon>{item.icon}</ListItemIcon>
               <ListItemText>{item.text}</ListItemText>

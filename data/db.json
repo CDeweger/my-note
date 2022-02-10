@@ -17,6 +17,24 @@
       "details": "this is something for work",
       "category": "work",
       "id": 4
+    },
+    {
+      "title": "work",
+      "details": "this is something for work",
+      "category": "work",
+      "id": 5
+    },
+    {
+      "title": "Buy Grocery",
+      "details": "Quis esse incididunt laboris Lorem aliqua velit Lorem. Irure mollit cillum non non minim pariatur dolor occaecat ea. Excepteur anim velit qui veniam voluptate qui mollit adipisicing veniam tempor aliquip labore mollit ex. Elit cillum eu nulla occaecat officia magna aliquip do do sunt dolor. Nostrud ea veniam dolor tempor tempor occaecat dolor laborum tempor pariatur anim.",
+      "category": "todos",
+      "id": 6
+    },
+    {
+      "title": "pay phone bills",
+      "details": "pay phone bills",
+      "category": "bills",
+      "id": 7
     }
   ]
 }
