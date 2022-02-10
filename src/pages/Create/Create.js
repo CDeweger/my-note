@@ -76,7 +76,11 @@ const Create = () => {
           error={detailsError}
         />
         <FormControl sx={{ display: "block", mt: 2 }}>
-          <FormLabel sx={{ display: "block", mt: 2, mb: 1 }} align="left">
+          <FormLabel
+            sx={{ display: "block", mt: 2, mb: 1 }}
+            align="left"
+            color="secondary"
+          >
             Note Category
           </FormLabel>
           <RadioGroup
