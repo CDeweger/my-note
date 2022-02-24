@@ -81,7 +81,7 @@ const Layout = ({ children }) => {
           <Typography className={classes.date}>
             Today is {format(new Date(), "eeee do MMMM y ")}{" "}
           </Typography>
-          <Typography>Carol</Typography>
+          <Typography>Carol D</Typography>
           <Avatar src={otterImg} className={classes.avatar} />
         </Toolbar>
       </AppBar>
