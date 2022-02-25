@@ -1,20 +1,35 @@
 import React, { useEffect, useState } from "react";
+import axios from "axios";
 import { Container, Grid } from "@mui/material";
 import NoteCard from "../components/NoteCard";
 import Masonry from "react-masonry-css";
 
+const API_URL = process.env.REACT_APP_API_URL;
+
 const Notes = () => {
   const [notes, setNotes] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:8080/notes/")
-      .then((res) => res.json())
-      .then((data) => setNotes(data));
+    axios
+      // .get(`${API_URL}notes`)
+      .get(`http://localhost:5000/notes`)
+      .then((res) => {
+        setNotes(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }, []);
 
-  const handleDelete = async (id) => {
-    await fetch("http://localhost:8080/notes/" + id, {
-      method: "DELETE",
-    });
+  const handleDelete = (id) => {
+    axios
+      .delete(`http:localhost:5000/notes/${id}`)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
     const newNotes = notes.filter((note) => note.id !== id);
     setNotes(newNotes);
   };
@@ -35,6 +50,7 @@ const Notes = () => {
         {notes.map((note) => (
           <div item key={note.id}>
             <NoteCard note={note} handleDelete={handleDelete} />
+            {/* <NoteCard note={note} /> */}
           </div>
         ))}
       </Masonry>

@@ -3,13 +3,18 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
-import { makeStyles } from "@mui/styles";
+import axios from "axios";
+//import { makeStyles } from "@mui/styles";
 import { FormControlLabel, TextField } from "@mui/material";
 import { Radio } from "@mui/material";
 import { RadioGroup } from "@mui/material";
 import { FormControl } from "@mui/material";
 import { FormLabel } from "@mui/material";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+
+const API_URL = process.env.REACT_APP_API_URL;
+
+console.log(API_URL);
 
 const Create = () => {
   const history = useHistory();
@@ -33,12 +38,23 @@ const Create = () => {
     }
 
     if (title && details) {
-      console.log(title, details, category);
-      fetch("http://localhost:8080/users/", {
-        method: "POST",
-        headers: { "Content-type": "application/json" },
-        body: JSON.stringify({ title, details, category }),
-      }).then(() => history.push("/"));
+      axios
+        .post(`http://localhost:5000/notes/`, {
+          title: e.target.title.value,
+          details: e.target.details.value,
+          category: e.target.category.value,
+        })
+        .then((res) => {
+          history.push("/");
+        })
+        .catch((err) => {
+          console.log("error");
+        });
+      // fetch("http://localhost:8080/users/", {
+      //   method: "POST",
+      //   headers: { "Content-type": "application/json" },
+      //   body: JSON.stringify({ title, details, category }),
+      // }).then(() => history.push("/"));
     }
   };
   return (
@@ -62,6 +78,7 @@ const Create = () => {
           fullWidth
           required
           error={titleError}
+          value={title}
         />
         <TextField
           sx={{ mt: 2 }}
@@ -74,6 +91,7 @@ const Create = () => {
           fullWidth
           required
           error={detailsError}
+          value={details}
         />
         <FormControl sx={{ display: "block", mt: 2 }}>
           <FormLabel
