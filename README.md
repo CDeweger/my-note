@@ -1,14 +1,15 @@
 # My Note -- a todo app
 
-It is a todo list app. It is a front end project setup with React using create-react-app. It's built with react hooks and styled with MUI.
+It is a todo list app. It is a full-stack project setup with React using create-react-app. It's built with react hooks and styled with MUI.
 Node modules need to be installed before running the app.
-Data is kept in json file.
+Data is kept in MySQL database.
 
 ## Available Scripts
 
-### `json-server --watch data/db.json --port 8080`
+### `npm start`
 
-The data is kept in json file, to run the json server you need to run 'json-server --watch data/db.json --port 8080' in your terminal.
+To run the server you need to run 'npm start' in your terminal.
+The data is kept in MySQL database.
 
 ### `npm start`
 
