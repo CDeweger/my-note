@@ -1,4 +1,5 @@
 import "./App.css";
+import { Helmet } from "react-helmet";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { createTheme, ThemeProvider } from "@mui/material";
 import Notes from "./pages/Notes";
@@ -27,6 +28,9 @@ function App() {
     <ThemeProvider theme={theme}>
       <div className="App">
         <BrowserRouter>
+          <Helmet>
+            <title>My Note</title>
+          </Helmet>
           <Layout>
             <Switch>
               <Route exact path="/">
