@@ -11,7 +11,7 @@ const Notes = () => {
   useEffect(() => {
     axios
       // .get(`${API_URL}notes`)
-      .get(`http://localhost:5000/notes`)
+      .get(`${API_URL}notes`)
       .then((res) => {
         setNotes(res.data);
       })
@@ -22,7 +22,7 @@ const Notes = () => {
 
   const handleDelete = (id) => {
     axios
-      .delete(`http:localhost:5000/notes/${id}`)
+      .delete(`${API_URL}notes/${id}`)
       .then((res) => {
         console.log(res);
       })
@@ -50,7 +50,6 @@ const Notes = () => {
         {notes.map((note) => (
           <div item key={note.id}>
             <NoteCard note={note} handleDelete={handleDelete} />
-            {/* <NoteCard note={note} /> */}
           </div>
         ))}
       </Masonry>

@@ -14,8 +14,6 @@ import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 const API_URL = process.env.REACT_APP_API_URL;
 
-console.log(API_URL);
-
 const Create = () => {
   const history = useHistory();
   const [title, setTitle] = useState("");
@@ -39,10 +37,10 @@ const Create = () => {
 
     if (title && details) {
       axios
-        .post(`http://localhost:5000/notes/`, {
-          title: e.target.title.value,
-          details: e.target.details.value,
-          category: e.target.category.value,
+        .post(`${API_URL}notes/`, {
+          title: title,
+          details: details,
+          category: category,
         })
         .then((res) => {
           history.push("/");
@@ -50,11 +48,6 @@ const Create = () => {
         .catch((err) => {
           console.log("error");
         });
-      // fetch("http://localhost:8080/users/", {
-      //   method: "POST",
-      //   headers: { "Content-type": "application/json" },
-      //   body: JSON.stringify({ title, details, category }),
-      // }).then(() => history.push("/"));
     }
   };
   return (
@@ -78,7 +71,6 @@ const Create = () => {
           fullWidth
           required
           error={titleError}
-          value={title}
         />
         <TextField
           sx={{ mt: 2 }}
@@ -91,7 +83,7 @@ const Create = () => {
           fullWidth
           required
           error={detailsError}
-          value={details}
+          //value={details}
         />
         <FormControl sx={{ display: "block", mt: 2 }}>
           <FormLabel
@@ -102,7 +94,7 @@ const Create = () => {
             Note Category
           </FormLabel>
           <RadioGroup
-            value={category}
+            //value={category}
             onChange={(e) => setCategory(e.target.value)}
           >
             <FormControlLabel
