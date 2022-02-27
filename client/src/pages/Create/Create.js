@@ -37,7 +37,7 @@ const Create = () => {
 
     if (title && details) {
       axios
-        .post(`${API_URL}notes/`, {
+        .post(`https://quiet-brook-54502.herokuapp.com/notes`, {
           title: title,
           details: details,
           category: category,

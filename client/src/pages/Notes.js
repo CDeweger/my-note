@@ -10,7 +10,7 @@ const Notes = () => {
   const [notes, setNotes] = useState([]);
   useEffect(() => {
     axios
-      .get(`${API_URL}notes`)
+      .get(`https://quiet-brook-54502.herokuapp.com/notes`)
       .then((res) => {
         setNotes(res.data);
       })
@@ -21,7 +21,7 @@ const Notes = () => {
 
   const handleDelete = (id) => {
     axios
-      .delete(`${API_URL}notes/${id}`)
+      .delete(`https://quiet-brook-54502.herokuapp.com/notes/${id}`)
       .then((res) => {
         console.log(res);
       })
