@@ -1,4 +1,5 @@
-# My Note -- a todo app
+The app is deployed on heroku https://my-note-2022.herokuapp.com/
+# My Note -- a task tracking app
 
 It is a todo list app. It is a full-stack project setup with React using create-react-app. It's built with react hooks and styled with MUI.
 Node modules need to be installed before running the app.
