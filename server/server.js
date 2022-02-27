@@ -10,6 +10,10 @@ app.use(express.json());
 
 dotenv.config();
 
+app.get("/", (req, res) => {
+  res.send("Hello from server!");
+});
+
 // Read - get all the notes
 app.get("/notes", (req, res) => {
   knex
@@ -19,7 +23,7 @@ app.get("/notes", (req, res) => {
       res.status(200).json(data);
     })
     .catch((err) => {
-      res.status(500).send("Error getting users");
+      res.status(500).send("Error getting notes");
     });
 });
 
@@ -33,7 +37,7 @@ app.post("/notes", (req, res) => {
         .then((data) => res.status(201).json(data[0]));
     })
     .catch((err) => {
-      res.status(500).send("Error creating users");
+      res.status(500).send("Error creating notes");
     });
 });
 
